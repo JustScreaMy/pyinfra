@@ -54,7 +54,6 @@ def package(
 
     install_packages = []
     remove_packages = []
-    refresh_packages = []
 
     for package in packages:
         # it's installed
