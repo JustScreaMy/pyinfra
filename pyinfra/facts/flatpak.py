@@ -7,7 +7,9 @@ from pyinfra.api import FactBase
 
 class FlatpakBaseFact(FactBase):
     abstract = True
-    requires_command = "flatpak"
+
+    def requires_command(self):
+        return "flatpak"
 
 
 class FlatpakPackage(FlatpakBaseFact):
@@ -60,7 +62,9 @@ class FlatpakPackages(FlatpakBaseFact):
     """
 
     default = list
-    command = "flatpak list --columns=application"
+
+    def command(self):
+        return "flatpak list --columns=application"
 
     def process(self, output):
         return [flatpak for flatpak in output[1:]]

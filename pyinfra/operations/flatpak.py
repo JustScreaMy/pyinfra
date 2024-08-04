@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from pyinfra import host
 from pyinfra.api import operation
-from pyinfra.facts.flatpak import FlatpakPackage, FlatpakPackages
+from pyinfra.facts.flatpak import FlatpakPackages
 
 
 @operation()
