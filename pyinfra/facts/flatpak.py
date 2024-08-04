@@ -8,7 +8,7 @@ from pyinfra.api import FactBase
 class FlatpakBaseFact(FactBase):
     abstract = True
 
-    def requires_command(self):
+    def requires_command(self, *args, **kwargs) -> str:
         return "flatpak"
 
 
