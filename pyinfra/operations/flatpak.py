@@ -11,8 +11,8 @@ from pyinfra.facts.flatpak import FlatpakPackages
 
 @operation()
 def package(
-        packages: str | list[str] | None = None,
-        present=True,
+    packages: str | list[str] | None = None,
+    present=True,
 ):
     """
     Install/remove a flatpak package
