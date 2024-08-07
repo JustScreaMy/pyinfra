@@ -72,9 +72,8 @@ def package(
             else:
                 host.noop(f"flatpak package {package} is not installed")
 
-    install_cmd = ["flatpak", "install"]
     if install_packages:
-        yield " ".join(install_cmd + install_packages)
+        yield " ".join(["flatpak", "install", "--noninteractive"] + install_packages)
 
     if remove_packages:
-        yield " ".join(["flatpak", "uninstall"] + remove_packages)
+        yield " ".join(["flatpak", "uninstall", "--noninteractive"] + remove_packages)
